@@ -6,9 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,12 +51,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startRegister(View view){
-        Intent intent = new Intent(this,RegisterActivity.class);
+    public void startRegister(View view) {
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-    public void toSplash(View view){
-        Intent intent = new Intent(this,SplashActivity.class);
+
+    public void toSplash(View view) {
+        Intent intent = new Intent(this, SplashActivity.class);
+        startActivity(intent);
+    }
+
+    public void toCategory(View view) {
+        Intent intent = new Intent(this, CategoriesActivity.class);
         startActivity(intent);
     }
 }

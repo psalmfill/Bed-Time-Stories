@@ -1,22 +1,50 @@
 package com.example.bedtime;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.bedtime.Adapters.OnBoardingAdapter;
+
 public class OnboardingActivity extends AppCompatActivity {
     ViewPager mSlidePager;
     Button mSkipButton, mNextButton, mStartReadingButton;
-    LinearLayout mSquareLayout,mBottomLayout;
+    LinearLayout mSquareLayout, mBottomLayout;
     TextView[] mSquares;
     String[] titles;
     OnBoardingAdapter mOnBoardingAdapter;
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int i, float v, int i1) {
+
+        }
+
+        @Override
+        public void onPageSelected(int i) {
+
+            if (i == mSquares.length - 1) {
+                mBottomLayout.setVisibility(View.GONE);
+                mStartReadingButton.setVisibility(View.VISIBLE);
+            } else {
+                addDotIndicator(i);
+                mBottomLayout.setVisibility(View.VISIBLE);
+                mStartReadingButton.setVisibility(View.GONE);
+            }
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int i) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +57,7 @@ public class OnboardingActivity extends AppCompatActivity {
         mStartReadingButton = findViewById(R.id.start_reading);
         titles = getResources().getStringArray(R.array.onboarding_title);
         String[] bodies = getResources().getStringArray(R.array.onboarding_bodies);
-        mOnBoardingAdapter = new OnBoardingAdapter(this,titles,bodies);
+        mOnBoardingAdapter = new OnBoardingAdapter(this, titles, bodies);
         mSlidePager.setAdapter(mOnBoardingAdapter);
         addDotIndicator(0);
         mSlidePager.addOnPageChangeListener(viewListener);
@@ -51,14 +79,14 @@ public class OnboardingActivity extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent intent = new Intent(OnboardingActivity.this,LoginActivity.class);
+        Intent intent = new Intent(OnboardingActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
-    public void addDotIndicator(int position){
+    public void addDotIndicator(int position) {
         mSquares = new TextView[titles.length];
         mSquareLayout.removeAllViews();
-        for(int i =0; i < mSquares.length;i++){
+        for (int i = 0; i < mSquares.length; i++) {
             mSquares[i] = new TextView(this);
             mSquares[i].setText(Html.fromHtml("&#8211;"));
             mSquares[i].setTextSize(40);
@@ -66,35 +94,8 @@ public class OnboardingActivity extends AppCompatActivity {
             mSquareLayout.addView(mSquares[i]);
 
         }
-        if(mSquares.length > 0){
+        if (mSquares.length > 0) {
             mSquares[position].setTextColor(getResources().getColor(R.color.colorPrimary));
         }
     }
-    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int i, float v, int i1) {
-
-        }
-
-        @Override
-        public void onPageSelected(int i) {
-
-            if (i== mSquares.length-1){
-                mBottomLayout.setVisibility(View.GONE);
-                mStartReadingButton.setVisibility(View.VISIBLE);
-            }else {
-                addDotIndicator(i);
-                mBottomLayout.setVisibility(View.VISIBLE);
-                mStartReadingButton.setVisibility(View.GONE);
-
-
-            }
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int i) {
-
-        }
-    };
 }

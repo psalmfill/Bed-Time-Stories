@@ -1,9 +1,7 @@
 package com.example.bedtime;
 
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 public class ProfileRegisterActivity extends AppCompatActivity {

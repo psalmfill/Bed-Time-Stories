@@ -3,23 +3,26 @@
     <!-- Larger blue circle in back -->
     <item>
         <shape android:shape="oval">
-            <solid  android:color="@color/colorWhite"/>
+            <solid android:color="@color/colorWhite" />
             <size
                 android:width="50dp"
-                android:height="50dp"/>
-            <stroke android:width="2dp" android:color="@color/colorPrimary"/>
+                android:height="50dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorPrimary" />
         </shape>
     </item>
     <!-- Smaller red circle in front -->
     <item>
         <shape android:shape="oval">
             <!-- transparent stroke = larger_circle_size - smaller_circle_size -->
-            <stroke android:color="@android:color/transparent"
-                android:width="40dp"/>
-            <solid android:color="@color/colorAsh"/>
+            <stroke
+                android:width="40dp"
+                android:color="@android:color/transparent" />
+            <solid android:color="@color/colorAsh" />
             <size
                 android:width="5dp"
-                android:height="5dp"/>
+                android:height="5dp" />
         </shape>
     </item>
 </layer-list>
