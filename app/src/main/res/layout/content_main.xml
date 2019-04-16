@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Onboarding"
+            android:onClick="toOnBoarding"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="77dp" />
 
@@ -68,14 +69,14 @@
 
         <Button
             android:id="@+id/reg_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="startRegister"
             android:text="Register" />
 
         <Button
             android:id="@+id/to_splash"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="toSplash"
             android:text="Splash" />
@@ -88,6 +89,13 @@
             android:onClick="toCategory"
             tools:layout_editor_absoluteX="89dp"
             tools:layout_editor_absoluteY="388dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toProfile"
+            android:text="Profile" />
 
 
     </LinearLayout>

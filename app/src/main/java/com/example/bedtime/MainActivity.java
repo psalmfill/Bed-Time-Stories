@@ -65,4 +65,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CategoriesActivity.class);
         startActivity(intent);
     }
+    public void toProfile(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void toOnBoarding(View view) {
+        Intent intent = new Intent(this, OnboardingActivity.class);
+        startActivity(intent);
+    }
+
 }

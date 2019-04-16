@@ -5,6 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.bedtime.R;
 
 public class OnBoardingAdapter extends PagerAdapter {
 
@@ -29,16 +33,16 @@ public class OnBoardingAdapter extends PagerAdapter {
         return view == object;
     }
 
-//    @NonNull
-//    @Override
-//    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-//        mInflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
-//        View view = mInflater.inflate(R.layout.onboarding_layout,container,false);
-//        TextView title = view.findViewById(R.id.slide_title);
-//        TextView body = view.findViewById(R.id.slide_body);
-//        title.setText(mTitles[position]);
-//        body.setText(mBodies[position]);
-//        container.addView(view);
-//        return view;
-//    }
+    @NonNull
+    @Override
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        mInflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
+        View view = mInflater.inflate(R.layout.onboarding_layout,container,false);
+        TextView title = view.findViewById(R.id.slide_title);
+        TextView body = view.findViewById(R.id.slide_body);
+        title.setText(mTitles[position]);
+        body.setText(mBodies[position]);
+        container.addView(view);
+        return view;
+    }
 }
