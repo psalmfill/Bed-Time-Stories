@@ -55,4 +55,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,RegisterActivity.class);
         startActivity(intent);
     }
+    public void toSplash(View view){
+        Intent intent = new Intent(this,SplashActivity.class);
+        startActivity(intent);
+    }
 }

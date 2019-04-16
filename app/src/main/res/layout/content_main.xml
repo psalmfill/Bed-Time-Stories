@@ -72,9 +72,15 @@
             android:onClick="startRegister"
             android:text="Register" />
 
+        <Button
+            android:id="@+id/to_splash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Splash"
+            android:onClick="toSplash"/>
+
 
     </LinearLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
