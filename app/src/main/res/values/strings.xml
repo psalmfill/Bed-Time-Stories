@@ -14,4 +14,16 @@
     <string name="invalid_email_address_error">Invalid email address</string>
     <string name="complete_profile">Complete Profile</string>
     <string name="add_profile_pic">Add Profile Pic</string>
+    <string name="skip">Skip</string>
+    <string-array name="onboarding_title">
+        <item>Bedtime Stories For Kids</item>
+        <item>Add Your own Stories</item>
+    </string-array>
+    <string-array name="onboarding_bodies">
+        <item>Read free bedtime stories, fairy tales, poems for kids and short stories for kids</item>
+        <item>You can add your own bedtime stories, fairy tales, poems for kids and short stories for kids</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

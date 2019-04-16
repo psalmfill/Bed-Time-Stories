@@ -32,8 +32,11 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoAction" />
-        <activity android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".OnboardingActivity"
+            android:theme="@style/AppTheme.NoAction"></activity>
     </application>
 
 </manifest>
