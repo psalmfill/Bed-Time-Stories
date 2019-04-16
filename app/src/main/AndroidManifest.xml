@@ -24,10 +24,13 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoAction" />
+        <activity
+            android:name=".ProfileRegisterActivity"
+            android:parentActivityName=".RegisterActivity"
+            android:theme="@style/AppTheme.NoAction" />
+        <activity android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoAction"></activity>
-        <activity android:name=".ProfileRegisterActivity"
-            android:theme="@style/AppTheme.NoAction"
-            android:parentActivityName=".RegisterActivity"></activity>
     </application>
 
 </manifest>
