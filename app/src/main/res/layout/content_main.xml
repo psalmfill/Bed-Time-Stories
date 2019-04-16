@@ -25,7 +25,10 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.024" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -42,7 +45,6 @@
             android:text="Main Activity"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="179dp" />
-
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
@@ -50,52 +52,75 @@
             android:text="Bookmarks "
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="279dp" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Navigation drawer"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="390dp" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navigation drawer"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="390dp" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single story"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="507dp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Single story"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="507dp" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/reg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startRegister"
+                android:text="Register" />
 
-        <Button
-            android:id="@+id/reg_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="startRegister"
-            android:text="Register" />
+            <Button
+                android:id="@+id/to_splash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toSplash"
+                android:text="Splash" />
 
-        <Button
-            android:id="@+id/to_splash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="toSplash"
-            android:text="Splash" />
+            <Button
+                android:id="@+id/to_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:onClick="toCategory"
+                tools:layout_editor_absoluteX="89dp"
+                tools:layout_editor_absoluteY="388dp" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/to_categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categories"
-            android:onClick="toCategory"
-            tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="388dp" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="toProfile"
             android:text="Profile" />
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toAddStory"
+            android:text="Add Story" />
+    </LinearLayout>
+
 
 
     </LinearLayout>
