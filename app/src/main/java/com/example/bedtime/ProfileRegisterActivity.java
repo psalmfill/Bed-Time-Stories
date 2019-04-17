@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bedtime.Api.ApiInterface;
@@ -21,8 +22,9 @@ public class ProfileRegisterActivity extends AppCompatActivity {
     public static final String REGISTER_EMAIL = "register_email";
     public static final String REGISTER_PASSWORD = "register_password";
 
-    private String mEmail,mPassword,mFirstName,mLastname ="";
+    private String mEmail,mPassword,mFirstName,mLastname,mDesignation ="";
     private EditText mFirstNameField,mLastNameField,mPhoneNumberField;
+    private Spinner mDesignationField;
     private Button mRegisterButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class ProfileRegisterActivity extends AppCompatActivity {
         mFirstNameField = findViewById(R.id.first_name_field);
         mLastNameField = findViewById(R.id.last_name_field);
         mPhoneNumberField = findViewById(R.id.phone_number_field);
+        mDesignationField = findViewById(R.id.designation);
         mRegisterButton = findViewById(R.id.register_button);
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +67,7 @@ public class ProfileRegisterActivity extends AppCompatActivity {
                 }
                 mFirstName = capitalize(mFirstName);
                 mLastname = capitalize(mLastname);
+                mDesignation = mDesignationField.getSelectedItem().toString().trim();
                 register();
 
             }
@@ -78,7 +82,7 @@ public class ProfileRegisterActivity extends AppCompatActivity {
         user.setEmail(mEmail);
         user.setName(mFirstName +" "+ mLastname);
         user.setPassword(mPassword);
-        user.setDesignation("");
+        user.setDesignation(mDesignation);
 
         Client.getInstance().create(ApiInterface.class).registerUser(user).enqueue(new Callback<String>() {
             @Override
