@@ -74,8 +74,13 @@ public class OnboardingActivity extends AppCompatActivity {
                 startNextActivity();
             }
         });
-
-
+        mStartReadingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OnboardingActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void startNextActivity() {

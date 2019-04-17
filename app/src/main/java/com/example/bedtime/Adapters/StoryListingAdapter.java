@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.bedtime.Model.Story;
 import com.example.bedtime.R;
 
@@ -37,6 +38,7 @@ public class StoryListingAdapter  extends RecyclerView.Adapter<StoryListingAdapt
         Story story = mStories.get(i);
         storyHolder.mTitle.setText(story.getTitle());
         storyHolder.mTime.setText(story.getReleaseDate());
+        Glide.with(mContext).load(story.getImage()).into(storyHolder.mImage);
     }
 
     @Override
@@ -44,13 +46,28 @@ public class StoryListingAdapter  extends RecyclerView.Adapter<StoryListingAdapt
         return mStories !=null?mStories.size():0;
     }
 
+    public void addStory(Story story){
+        mStories.add(story);
+        notifyItemInserted(mStories.size() !=0?mStories.size()-1:0);
+    }
+    public  void addStories(List<Story> stories){
+        for(Story story:stories){
+            addStory(story);
+        }
+    }
+    public  void addStories(Story[] stories){
+        for(Story story:stories){
+            addStory(story);
+        }
+    }
     class StoryHolder extends RecyclerView.ViewHolder  {
         ImageButton mLike,mDislike;
         TextView mTitle,mTime;
-        ImageView mImage;
+        ImageView mImage,mAuthor_image;
         public StoryHolder(@NonNull View itemView) {
             super(itemView);
             mImage = itemView.findViewById(R.id.story_banner);
+            mAuthor_image = itemView.findViewById(R.id.author_image);
             mTitle = itemView.findViewById(R.id.story_title);
             mTime = itemView.findViewById(R.id.story_publish_time);
             mLike = itemView.findViewById(R.id.like_button);

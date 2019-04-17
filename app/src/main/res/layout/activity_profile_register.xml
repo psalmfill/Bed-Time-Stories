@@ -78,7 +78,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageButton" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/first_name_field"
         style="@style/EditTextWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/last_name_field"
         style="@style/EditTextWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -105,10 +105,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/first_name_field" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/phone_number_field"
         style="@style/EditTextWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -117,12 +117,13 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="phone"
+        android:hint="@string/phone_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/last_name_field" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -136,6 +137,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_field" />
 
 </android.support.constraint.ConstraintLayout>

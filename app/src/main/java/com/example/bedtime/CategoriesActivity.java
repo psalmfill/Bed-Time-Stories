@@ -8,10 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.example.bedtime.Adapters.CategoriesAdapter;
+import com.example.bedtime.Api.ApiInterface;
+import com.example.bedtime.Api.Client;
+import com.example.bedtime.Api.Responses.CategoryAllResponse;
 import com.example.bedtime.Model.Category;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CategoriesActivity extends AppCompatActivity {
     RecyclerView mCategory_rv;
@@ -34,14 +41,25 @@ public class CategoriesActivity extends AppCompatActivity {
 
         mCategory_rv = findViewById(R.id.category_rv);
         List<Category> categories = new ArrayList<>();
-        categories.add(new Category("Myths"));
-        categories.add(new Category("Love"));
-        categories.add(new Category("Tale"));
-        categories.add(new Category("Night"));
-        categories.add(new Category("Life"));
-        categories.add(new Category("School"));
-        mAdapter = new CategoriesAdapter(this, categories);
+        mAdapter = new CategoriesAdapter(this, categories,"");
         mCategory_rv.setLayoutManager(new LinearLayoutManager(this));
         mCategory_rv.setAdapter(mAdapter);
+        Client.getInstance().create(ApiInterface.class).getAllCategories().enqueue(new Callback<CategoryAllResponse>() {
+            @Override
+            public void onResponse(Call<CategoryAllResponse> call, Response<CategoryAllResponse> response) {
+                if(response.isSuccessful()){
+                    CategoryAllResponse  categoryList = response.body();
+                    List<Category> cl= categoryList.getData();
+                    if(cl !=null){
+                        mAdapter.addCategories(cl);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoryAllResponse> call, Throwable t) {
+
+            }
+        });
     }
 }

@@ -22,7 +22,9 @@ public class LoginActivity extends AppCompatActivity {
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "Login Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                startActivity(intent);
+//                Toast.makeText(LoginActivity.this, "Login Clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

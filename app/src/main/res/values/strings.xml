@@ -34,4 +34,5 @@
     <string name="add_content_hint">And the fish happened to grow wings...</string>
     <string name="discard">Discard</string>
     <string name="content">Content</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

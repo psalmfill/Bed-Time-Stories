@@ -1,27 +1,34 @@
 package com.example.bedtime.Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Category {
-    private String mTitle;
 
-    private String mImagePath;
+    @SerializedName("_id")
+    @Expose
+    protected String id;
+    @SerializedName("name")
+    @Expose
+    private String name;
 
-    public Category(String title) {
-        mTitle = title;
+    public Category(String name) {
+        this.name = name;
     }
 
-    public String getTitle() {
-        return mTitle;
+    public String getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        mTitle = title;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getImagePath() {
-        return mImagePath;
+    public String getName() {
+        return name;
     }
 
-    public void setImagePath(String imagePath) {
-        mImagePath = imagePath;
+    public void setName(String name) {
+        this.name = name;
     }
 }
