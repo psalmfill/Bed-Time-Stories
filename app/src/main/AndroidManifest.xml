@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoAction">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -22,32 +22,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoAction" />
+            android:name=".RegisterActivity" />
         <activity
             android:name=".ProfileRegisterActivity"
-            android:parentActivityName=".RegisterActivity"
-            android:theme="@style/AppTheme.NoAction" />
+            android:parentActivityName=".RegisterActivity" />
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoAction" />
+            android:name=".LoginActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".OnboardingActivity"
-            android:theme="@style/AppTheme.NoAction" />
+            android:name=".OnboardingActivity" />
         <activity
             android:name=".CategoriesActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoAction" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ProfileActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoAction" />
-        <activity android:name=".AddStoryActivity"
-            android:theme="@style/AppTheme.NoAction"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddStoryActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AddStoriesContentActivity"></activity>
     </application>
 
 </manifest>

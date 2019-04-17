@@ -114,7 +114,7 @@
             android:onClick="toProfile"
             android:text="Profile" />
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/type_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="toAddStory"
