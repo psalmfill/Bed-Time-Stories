@@ -77,5 +77,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddStoryActivity.class);
         startActivity(intent);
     }
+    public void toHome(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
 
 }

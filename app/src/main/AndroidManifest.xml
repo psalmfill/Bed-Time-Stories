@@ -21,18 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RegisterActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity
             android:name=".ProfileRegisterActivity"
             android:parentActivityName=".RegisterActivity" />
-        <activity
-            android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".OnboardingActivity" />
+        <activity android:name=".OnboardingActivity" />
         <activity
             android:name=".CategoriesActivity"
             android:parentActivityName=".MainActivity" />
@@ -41,8 +38,9 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AddStoryActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".AddStoriesContentActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".AddStoriesContentActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>
